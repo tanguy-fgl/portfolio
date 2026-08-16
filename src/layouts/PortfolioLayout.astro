@@ -1,4 +1,24 @@
 ---
+import { ThemeProvider } from '@appica/ui-react/providers/theme-provider';
 import Footer from '../components/Footer.astro';
-const { title } = Astro.props;
+import "../styles/global.css";
+
+const { title = "Portfolio" } = Astro.props;
 ---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <ThemeProvider client:load>
+      <slot />
+      <Footer />
+    </ThemeProvider>
+  </body>
+</html>
