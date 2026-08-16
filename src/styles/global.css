@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import '@appica/ui-react/styles.css';
+
+@source '@appica/ui-react/';
+
+:root {
+  --font-sans: var(--font-outfit, 'Outfit'), ui-sans-serif, system-ui, sans-serif;
+}
